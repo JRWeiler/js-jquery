@@ -1,8 +1,16 @@
-function setupPen(color){
+function setupPen(mode){
   $(".column").mouseover(function(){
-    $(this).css("background-color",color);
-  });
+    if (mode.toUpperCase() == "FADE"){
+      $(this).css("background-color","black");
+      var op = $(this).css("opacity");   
+      $(this).css("opacity", op*1.3);
+    }
   
+    if (mode.toUpperCase() == "RANDOM"){
+      $(this).css("background-color", getRandomColor());
+      $(this).css("opacity", 1);
+    }
+  });
 };
 
 
@@ -26,8 +34,17 @@ function createGrid(size)
 
 function resetGrid(){
   var size = window.prompt("How many squares do you want?"),
-      color = window.prompt("Enter a color");
+      mode = window.prompt("Random or Fade?")
   createGrid(size);
-  setupPen(color);
+  setupPen(mode);
 }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.round(Math.random() * 15)];
+    }
+    return color;
+};
 

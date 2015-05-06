@@ -13,14 +13,11 @@
     border: 1px solid;
     display: inline-block;
     box-sizing: border-box;
+    opacity: .1;
 }
 
-.blue{
-  background-color:blue;
-}
-
-.top-control{
-
+.top-control {
+  text-align:center;
 }
 
 .top-control button{
@@ -35,3 +32,19 @@
   background: rgb(245, 245, 245);
 }
 
+.signature {
+  text-align: center;
+  margin: 16px 4px;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  margin: 20px 4px;
+  opacity:.5;
+  background-color: green;
+  font-family: Arial;
+  color: white;
+}
